@@ -1,0 +1,77 @@
+PODS:
+  - Agrume (5.3.2):
+    - SwiftyGif
+  - Alamofire (4.7.3)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
+  - Differentiator (3.1.0)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya-ObjectMapper/Core (2.7):
+    - Moya (~> 11)
+    - ObjectMapper (~> 3.3)
+  - Moya-ObjectMapper/RxSwift (2.7):
+    - Moya-ObjectMapper/Core
+    - RxSwift (~> 4.1)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - ObjectMapper (3.3.0)
+  - Result (3.2.4)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
+  - SwiftyGif (5.2.0)
+  - SwiftyUserDefaults (3.0.1)
+
+DEPENDENCIES:
+  - Agrume
+  - AlamofireImage
+  - Moya-ObjectMapper/RxSwift
+  - Moya/RxSwift (~> 11.0)
+  - RxCocoa
+  - RxDataSources
+  - RxSwift
+  - SwiftyUserDefaults
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Agrume
+    - Alamofire
+    - AlamofireImage
+    - Differentiator
+    - Moya
+    - Moya-ObjectMapper
+    - ObjectMapper
+    - Result
+    - RxCocoa
+    - RxDataSources
+    - RxSwift
+    - SwiftyGif
+    - SwiftyUserDefaults
+
+SPEC CHECKSUMS:
+  Agrume: 171c1d1079324195c7ce04af4c7a66d86a9cf952
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  SwiftyGif: b85c6b33a9411859d9e1db998b6a8214aea942df
+  SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
+
+PODFILE CHECKSUM: 02c14873ead3cb30393986959361a671a645eed3
+
+COCOAPODS: 1.8.4

@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  FlickrViewer
-//
-//  Created by Jason Tezanos on 10/27/18.
-//  Copyright © 2018 Jason Tezanos. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

@@ -1,24 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gl8-If-tJ8">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="wuM-PF-2SS">
+            <objects>
+                <navigationController id="gl8-If-tJ8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qtK-fe-nq4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0qh-N9-mYu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gka-YC-pOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-650" y="133"/>
+        </scene>
+        <!--Flickr Viewer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" title="Flickr Viewer" id="BYZ-38-t0r" customClass="SearchVC" customModule="FlickrViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search for photos" translatesAutoresizingMaskIntoConstraints="NO" id="oy1-PI-EXk">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vN5-nj-OcD">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rru-uY-Esg">
+                                    <size key="itemSize" width="375" height="327"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="OXT-39-tJS" customClass="ImageCell" customModule="FlickrViewer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KCG-yb-JKq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="KCG-yb-JKq" firstAttribute="leading" secondItem="OXT-39-tJS" secondAttribute="leading" id="2wH-L6-kZX"/>
+                                            <constraint firstAttribute="bottom" secondItem="KCG-yb-JKq" secondAttribute="bottom" id="pJ7-QV-EVo"/>
+                                            <constraint firstAttribute="trailing" secondItem="KCG-yb-JKq" secondAttribute="trailing" id="u6k-va-DC6"/>
+                                            <constraint firstItem="KCG-yb-JKq" firstAttribute="top" secondItem="OXT-39-tJS" secondAttribute="top" id="xxE-2i-wy0"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="KCG-yb-JKq" id="AZv-ek-l4s"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oy1-PI-EXk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="B94-oR-GLF"/>
+                            <constraint firstItem="oy1-PI-EXk" firstAttribute="leading" secondItem="vN5-nj-OcD" secondAttribute="leading" id="Bqg-u9-L5f"/>
+                            <constraint firstItem="vN5-nj-OcD" firstAttribute="top" secondItem="oy1-PI-EXk" secondAttribute="bottom" id="R8D-nI-DRE"/>
+                            <constraint firstAttribute="trailing" secondItem="oy1-PI-EXk" secondAttribute="trailing" id="cfN-tZ-KFG"/>
+                            <constraint firstItem="oy1-PI-EXk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pbO-GU-cEU"/>
+                            <constraint firstItem="oy1-PI-EXk" firstAttribute="trailing" secondItem="vN5-nj-OcD" secondAttribute="trailing" id="qhs-Om-LIw"/>
+                            <constraint firstItem="vN5-nj-OcD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="rQN-Tm-qgv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Dog Breeds" id="8Q0-Ac-s0M"/>
+                    <connections>
+                        <outlet property="collectionView" destination="vN5-nj-OcD" id="xms-Vk-SKl"/>
+                        <outlet property="searchBar" destination="oy1-PI-EXk" id="Lyr-DV-If3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
